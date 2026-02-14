@@ -73,3 +73,84 @@ for i in range(numeros[0], numeros[-1] + 1):
         print(f"{i} es un número par.")
     else:
         print(f"{i} es un número impar.")
+
+#Vamos a probar a remover valores de una lista.
+frutas = ["manzana", "banana", "naranja", "pera", "uva"]
+# Remover la fruta "naranja" de la lista
+frutas.remove("naranja")
+print(frutas)  # Salida: ['manzana', 'banana', 'pera', 'uva']
+# Remover la fruta en el índice 1 (banana)
+frutas.pop(1)
+print(frutas)  # Salida: ['manzana', 'pera', 'uva']
+# Remover la última fruta de la lista
+frutas.pop()
+print(frutas)  # Salida: ['manzana', 'pera']
+# Remover la fruta "manzana" de la lista
+frutas.remove("manzana")
+print(frutas)  # Salida: ['pera']
+del frutas[0]  # Eliminar la fruta en el índice 0 (pera)
+print(frutas)  # Salida: []
+frutas = ["manzana", "banana", "naranja", "pera", "uva"]
+# Remover la fruta "kiwi" de la lista (que no existe)
+try:
+    frutas.remove("kiwi")
+except ValueError:
+    print("La fruta 'kiwi' no está en la lista.")
+added = frutas + ["kiwi"]
+print(added)  # Salida: ['manzana', 'banana', 'naranja', 'pera', 'uva', 'kiwi']
+
+if "kiwi" in added:
+    added.remove("kiwi")
+    print("La fruta 'kiwi' ha sido removida de la lista.")
+else:    
+    print("La fruta 'kiwi' no está en la lista.")
+
+# Crearemos un bucle para remover todas las frutas de la lista.
+frutas = ["manzana", "banana", "naranja", "pera", "uva"]
+while frutas:
+    fruta_removida = frutas.pop()
+    print(f"Removiendo {fruta_removida} de la lista.")
+
+print("La lista de frutas está ahora vacía.")
+# Crearemos un bucle para remover todas las frutas de la lista utilizando un bucle for.
+frutas = ["manzana", "banana", "naranja", "pera", "uva"]
+
+for i in range(len(frutas) - 1, -1, -1):
+    fruta_removida = frutas.pop(i)
+    print(f"Removiendo {fruta_removida} de la lista.")
+
+print("La lista de frutas está ahora vacía.")
+
+#Agregaremos elementos a una lista utilizando el método append() y extend().
+frutas = ["manzana", "banana", "naranja"]
+# Agregar una fruta al final de la lista
+frutas.append("pera")
+print(frutas)  # Salida: ['manzana', 'banana', 'naranja', 'pera']
+# Agregar varias frutas al final de la lista
+frutas.extend(["uva", "kiwi"])
+print(frutas)  # Salida: ['manzana', 'banana', 'naranja', 'pera', 'uva', 'kiwi']
+# Agregar una fruta al final de la lista utilizando el operador +
+frutas = frutas + ["mango"]
+print(frutas)  # Salida: ['manzana', 'banana', 'naranja', 'pera', 'uva', 'kiwi', 'mango']
+# Agregar una fruta al final de la lista utilizando el método insert() en el índice 0
+frutas.insert(0, "fresa")
+print(frutas)  # Salida: ['fresa', 'manzana', 'banana', 'naranja', 'pera', 'uva', 'kiwi', 'mango']
+# Llenaremos una lista con un bucle for utilizando el método append().
+numeros = []
+for i in range(1, 11):
+    numeros.append(i)
+print(numeros)  # Salida: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+if 1 in numeros:
+    print("Se Agrego el numero 1 a la lista. " \
+    "Se Agrego el numero 2 a la lista. " \
+    "Se Agrego el numero 3 a la lista. " \
+    "Se Agrego el numero 4 a la lista. " \
+    "Se Agrego el numero 5 a la lista. " \
+    "Se Agrego el numero 6 a la lista. " \
+    "Se Agrego el numero 7 a la lista. " \
+    "Se Agrego el numero 8 a la lista. " \
+    "Se Agrego el numero 9 a la lista. " \
+    "Se Agrego el numero 10 a la lista. ")
+else:
+    print("No se pudo agregar el numero a la lista.")
+
